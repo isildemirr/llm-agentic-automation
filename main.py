@@ -1,49 +1,28 @@
-# from llm import LLMClient
-# from tools import calculator_tool, reminder_tool, email_tool
-
-
-# def main():
-#     llm = LLMClient()
-
-#     user_input = input("Bir görev girin: ")
-
-#     response = llm.generate(user_input)
-
-#     print("\nLLM Kararı:")
-#     print(response)
-
-#     if "hesaplama aracı" in response:
-#         tool_result = calculator_tool(user_input)
-
-#         print("\nTool Sonucu:")
-#         print(tool_result)
-#     else:
-#         print("\nCevap:")
-#         print(response)
-#     # elif "hatırlatma aracı" in response:
-#     #     tool_result = reminder_tool(user_input)
-
-#     #     print("\nTool Sonucu:")
-#     #     print(tool_result)
-#     if "e-posta" in response:
-#         tool_result = email_tool(user_input)
-
-#         print("\nTool Sonucu:")
-#         print(tool_result)
-# if __name__ == "__main__":
-#     main()
 from agent import Agent
-
-
+from llm import LLMClient
 def main():
-    agent = Agent()
+    llm = LLMClient()
+    agent = Agent(llm)
 
-    user_input = input("Bir görev girin: ")
-    result = agent.run(user_input)
+    print("LLM Agent sistemine hoş geldiniz.")
+    print("Çıkmak için 'çıkış' yazın.")
 
-    print("\nSonuç:")
-    print(result)
+    while True:
+        user_input = input("\nBir görev girin: ")
 
+        if user_input.lower() == "çıkış":
+            print("Program kapatıldı.")
+            break
+
+        try:
+            result = agent.run(user_input)
+
+            print("\nAgent Sonucu:")
+            print(result)
+
+        except Exception as error:
+            print("\nBir hata oluştu:")
+            print(error)
 
 if __name__ == "__main__":
     main()
