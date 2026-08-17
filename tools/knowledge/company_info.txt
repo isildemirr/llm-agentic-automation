@@ -1,0 +1,13 @@
+Finans Departmanı Çalışma Esasları
+
+• Aylık finansal raporlar her ayın ilk haftasında hazırlanır.
+
+• Harcamalar muhasebe tarafından onaylandıktan sonra sisteme işlenir.
+
+• Ödemeler çift onay mekanizması ile gerçekleştirilir.
+
+• Bütçe sapmaları %10'u geçtiğinde yönetime rapor edilir.
+
+• Nakit akışı haftalık olarak takip edilir.
+
+• Finans ekibi SAP ERP sistemi kullanmaktadır.
